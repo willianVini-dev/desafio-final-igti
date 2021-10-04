@@ -1,7 +1,11 @@
 import Sequelize from 'sequelize';
-const sequelize = new Sequelize(process.env.DATA_BASE, 'root', '', {
+console.log(process.env.DATA_BASE)
+const sequelize = new Sequelize('desafio-final-igti', 'root', '', {
   host: 'localhost',
-  dialect: 'mysql'
+  dialect: 'mysql',
+  define: {
+    timestamps: false
+}
 
 });
 

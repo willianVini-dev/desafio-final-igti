@@ -1,32 +1,33 @@
 import {sequelize} from '../db/mysqlConnection.js'
+import {Sequelize} from 'sequelize'
 
 const Cliente = sequelize.define("clientes",{
   clienteId:{
-    type: sequelize.STRING,
+    type: Sequelize.STRING,
     primaryKey: true,
     autoIncrement: true,
     allowNull: false
   },
   nome: {
-    type: sequelize.STRING,
+    type: Sequelize.STRING,
     allowNull: false
   },
   email: {
-    type: sequelize.STRING,
+    type: Sequelize.STRING,
     allowNull: false
   },
   senha: {
-    type: sequelize.STRING,
+    type: Sequelize.STRING,
     allowNull: false
   },
   telefone: {
-    type: sequelize.STRING,
+    type: Sequelize.STRING,
     allowNull: false
   },
   endereco: {
-    type: sequelize.STRING,
+    type: Sequelize.STRING,
     allowNull: false
   }
-});
+},{ underscored: true});
 
 export {Cliente}

@@ -1,11 +1,11 @@
 import { sequelize } from "../db/mysqlConnection";
 import { Cliente } from "./clienteModels";
 import { Livro } from "./livroModels";
-import { Autor } from "./autorModels";
+import {Sequelize} from 'sequelize'
 
 const Venda = sequelize.define("vendas",{
-  vandaId:{
-    type: sequelize.STRING,
+  vendaId:{
+    type: Sequelize.STRING,
     primaryKey: true,
     autoIncrement: true,
     allowNull: false
@@ -14,10 +14,10 @@ const Venda = sequelize.define("vendas",{
     type: new Date(),
     allowNull: false
   }
-});
+},{underscored: true});
 
 Venda.belongsTo(Cliente, {foreignKey: "clienteId"});
 Venda.belongsTo(Livro, {foreignKey: "livroId"});
-Venda.belongsTo(Autor, {foreignKey: "autorId"});
+
 
 export { Venda }
