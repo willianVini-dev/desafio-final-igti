@@ -1,6 +1,5 @@
-import { Cliente } from "../models/clienteModels.js";
-import {ClienteRepository} from "../repository/clienteRepository.js"
-import {VendaRepository} from "../repository/vendaRepository.js"
+import {ClienteRepository} from "../../repository/clienteRepository"
+import {VendaRepository} from "../../repository/vendaRepository.js"
 
 const ClienteService = {
 

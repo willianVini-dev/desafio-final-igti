@@ -16,7 +16,7 @@ describe("Testes clientes",()=>{
   test.skip("Deve ser possivel atualizar um cliente", async ()=>{
 
     const novoCliente ={
-      clienteId: 1,
+      clienteId: 7,
       nome: "segundo cliente",
       email: "testeteste@hotmail.com",
       senha: "09876549999",
@@ -30,7 +30,7 @@ describe("Testes clientes",()=>{
 
   test.skip("Deve ser possivel excluir um cliente", async()=>{
 
-    const cliente_id = 4;
+    const cliente_id = 7;
     const res = await ClienteService.excluir(cliente_id);
     expect(res.length).toBe(0)
     
@@ -46,7 +46,7 @@ describe("Testes clientes",()=>{
     expect(res[0]).toHaveProperty("endereco");
   });
 
-  test("Deve retornar um cliente, com todas as informações exceto o campo de senha, que não deve ser retornado", async()=>{
+  test.skip("Deve retornar um cliente, com todas as informações exceto o campo de senha, que não deve ser retornado", async()=>{
     const id = 8;
     const res = await ClienteService.buscarCliente(id);
     expect(res).not.toHaveProperty("senha");

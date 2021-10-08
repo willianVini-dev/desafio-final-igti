@@ -20,7 +20,7 @@ const Autor = sequelize.define("autores",{
     type:Sequelize.STRING,
     allowNull: true
   }
-},{undescored: true});
+},{underscored: true});
 
 
 export { Autor }

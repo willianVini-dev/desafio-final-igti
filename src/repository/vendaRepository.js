@@ -1,5 +1,4 @@
-import {Venda} from "../models/vendaModels.js"
-import {sequelize} from '../db/mysqlConnection.js'
+import {Venda} from "../models/vendaModels"
 
 const VendaRepository ={
 
@@ -11,6 +10,13 @@ const VendaRepository ={
       throw new Error(err);
     }finally{
       //sequelize.close();
+    }
+  },
+  vendaLivro: async(id)=>{
+    try {
+      return await Venda.findOne({where:{livroId:id}});
+    } catch (err) {
+      throw new Error(err)
     }
   }
 }

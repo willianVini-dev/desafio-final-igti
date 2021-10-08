@@ -1,6 +1,8 @@
 import Sequelize from 'sequelize';
-console.log(process.env.DATA_BASE)
-const sequelize = new Sequelize('desafio-final-igti', 'root', '', {
+import dotenv from 'dotenv'
+dotenv.config()
+
+const sequelize = new Sequelize(process.env.DATA_BASE, 'root', '', {
   host: 'localhost',
   dialect: 'mysql',
   define: {

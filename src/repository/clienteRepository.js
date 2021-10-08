@@ -1,5 +1,4 @@
 import {Cliente} from "../models/clienteModels"
-import {sequelize} from '../db/mysqlConnection.js'
 
 const ClienteRepository = {
   criar: async (cliente)=>{
@@ -8,7 +7,7 @@ const ClienteRepository = {
     } catch (err) {
       throw new Error(err)
     }finally {
-      sequelize.close();
+      //sequelize.close();
     }
   },
   buscarUm: async (id)=>{
@@ -17,7 +16,7 @@ const ClienteRepository = {
     }catch(err){
       throw new Error(err)
     }finally{
-      sequelize.close();
+      //sequelize.close();
     }
   },
   atualizarCliente: async (id,novoCliente)=>{
@@ -27,7 +26,7 @@ const ClienteRepository = {
       console.log(err)
       throw new Error(err)
     }finally{
-      sequelize.close();
+     // sequelize.close();
     }
   },
   excluir: async(id)=>{
